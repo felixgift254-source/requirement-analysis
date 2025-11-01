@@ -36,17 +36,3 @@ Gap Analysis: Identifies the difference between the current state and the desire
 SWOT Analysis: Examines the Strengths, Weaknesses, Opportunities, and Threats related to the proposed project.
 MoSCoW Method: A prioritization technique that categorizes requirements as Must-have, Should-have, Could-have, or Won't-have.[12]
 The culmination of the requirement analysis phase is typically a Software Requirements Specification (SRS) document.[3][7] This document serves as a formal record of all the identified requirements and acts as a single source of truth for the development team and stakeholders throughout the SDLC.[3] By investing time and effort in a rigorous requirement analysis process, organizations can significantly increase the likelihood of delivering a high-quality software product that truly meets the needs of its users.
-Sources
-help
-tutorsglobe.com
-teachics.org
-stratoflow.com
-scribd.com
-pulsion.co.uk
-egyankosh.ac.in
-aviyalpresentations.com
-browserstack.com
-requiment.com
-wikipedia.org
-debugee.com
-redstartechs.com
