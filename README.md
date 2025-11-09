@@ -1,4 +1,4 @@
-# requirement-analysis
+# Requirement-analysis
   The Requirement Analysis Project focuses on crafting a comprehensive foundation for software development by documenting, analyzing, and structuring requirements. Through a series of well-defined tasks, learners will create a detailed blueprint of the requirement analysis phase for a booking management system. This project simulates a real-world development scenario, emphasizing clarity, precision, and structure in defining requirements to set the stage for successful project execution.
 
 # The Blueprint for Success: Unpacking Requirement Analysis in the Software Development Lifecycle
@@ -91,7 +91,7 @@ This stage involves refining, structuring, and prioritizing the documented requi
 This is the final quality check before the requirements are formally approved and handed over to the design and development teams. Requirement validation ensures that the documented requirements accurately reflect the stakeholders' needs and that the proposed system is feasible to build.
 
 # TYPES OF REQUIREMENTS
-Of course. Based on the provided case study for a hotel booking app like Airbnb or OYO, here is a clear definition and a detailed breakdown of Functional and Non-Functional Requirements.
+
 
 ---
 
@@ -171,3 +171,117 @@ Of course. Based on the provided case study for a hotel booking app like Airbnb 
 | **Easily Testable?** | Yes (e.g., "Can the user book a property?") | Often requires performance/load testing (e.g., "How fast is the search?") |
 | **User Perspective** | Directly visible and experienced by the user | Often felt indirectly (e.g., a slow app is frustrating, a secure app is trusted) |
 | **Examples from Project** | Search, Book, Pay, Review | Fast search, 99.9% uptime, Secure payments, Easy-to-use interface |
+
+#ACCEPTANCE CRITERIA
+---
+
+### **What are Acceptance Criteria (AC)?**
+
+**Acceptance Criteria** are a set of specific, measurable, and testable conditions that a software feature must satisfy to be accepted by a user, customer, or product owner. They define the **boundaries and requirements of a user story** and answer the question: **"How will we know when this story is done and done correctly?"**
+
+Think of them as a **contract** between the development team and the product owner. If all criteria are met, the story is considered complete.
+
+---
+
+### **How to Establish Acceptance Criteria**
+
+Establishing effective AC is a collaborative process. Here’s a step-by-step guide:
+
+#### **1. Start with the User Story and Requirements**
+AC are derived from the broader Functional and Non-Functional Requirements. A user story follows the format:
+*"As a [type of user], I want to [perform an action] so that I can [achieve a goal]."*
+
+**Example User Story:**
+*"As a Guest, I want to filter search results by price range so that I can find properties within my budget."*
+
+#### **2. Hold a Collaborative Meeting (Refinement/Grooming)**
+The entire Agile team should be involved:
+*   **Product Owner / Business Analyst:** Defines the "what" and "why" from the user's perspective.
+*   **Developers:** Ask technical questions and identify edge cases.
+*   **QA Testers:** Ensure the criteria are testable and think of scenarios to break the feature.
+
+#### **3. Apply the "Given-When-Then" Formula (The Gherkin Language)**
+This is the most common and effective format for writing clear, unambiguous AC. It forces you to think about preconditions, actions, and outcomes.
+
+*   **Given:** The initial context or pre-condition. (The state the system/user is in.)
+*   **When:** The specific action or event performed by the user or system.
+*   **Then:** The observable and measurable outcome or result.
+
+**Example for the Filter Story:**
+*   **AC1 (Basic Functionality):**
+    *   **Given** I am on the search results page
+    *   **When** I set a minimum price of $50 and a maximum price of $200
+    *   **Then** only properties priced between $50 and $200 (inclusive) should be displayed.
+
+*   **AC2 (Edge Case - No Results):**
+    *   **Given** I am on the search results page
+    *   **When** I set a minimum price of $500 and a maximum price of $100
+    *   **Then** the system should show a message: "No properties match your filters."
+    *   **And** the "Reset Filters" button should be visible.
+
+*   **AC3 (Edge Case - Invalid Input):**
+    *   **Given** I am on the search results page
+    *   **When** I enter text (e.g., "abc") into the price field
+    *   **Then** the system should display an inline error message: "Please enter a valid number."
+
+#### **4. Key Principles for Writing Good AC (The "SMART" approach for stories)**
+
+*   **Specific:** Avoid ambiguity. Everyone should interpret them the same way.
+*   **Measurable:** They must be verifiable with a pass/fail result.
+*   **Achievable:** They must be technically feasible within the sprint.
+*   **Relevant:** Each criterion must directly relate to the user story's goal.
+*   **Testable:** QA must be able to create test cases from them easily.
+
+**Bad AC:** "The filter should work well." (Vague, not testable)
+**Good AC:** "Given results with prices from $10 to $500, when I set a max price of $100, then no property over $100 is displayed." (Specific and testable)
+
+---
+
+### **How to Use Acceptance Criteria**
+
+AC are not just a checklist to be reviewed at the end; they are a living part of the entire development process.
+
+#### **1. During Sprint Planning & Development**
+*   **Clarifies Scope:** AC provide developers with a crystal-clear understanding of what to build, preventing scope creep and misunderstandings.
+*   **Guides Development:** Developers can write code with the specific pass/fail conditions in mind, leading to more focused and efficient work.
+
+#### **2. During Quality Assurance (QA) & Testing**
+*   **Basis for Test Cases:** QA engineers use the AC as the primary source for creating their test scenarios. Each AC becomes one or more test cases.
+*   **Defines "Done":** A story is not ready for testing until all AC are implemented. Similarly, a story is not "Done" until all AC have been verified by QA.
+
+#### **3. During the Demo & Acceptance**
+*   **Demonstration Script:** During the sprint review, the team uses the AC to demonstrate the feature to the product owner and stakeholders. They literally walk through each criterion to prove it works.
+*   **Formal Acceptance:** The Product Owner uses the AC as the official checklist for accepting or rejecting the user story. If all AC are met, the story is accepted.
+
+#### **4. As a Communication & Documentation Tool**
+*   **Shared Understanding:** AC create a single source of truth for the team, business, and stakeholders, minimizing miscommunication.
+*   **Living Documentation:** Well-written AC serve as documentation for what the system does and why, which is invaluable for new team members or future maintenance.
+
+### **Putting It All Together: A Complete Example**
+
+**User Story:** As a Guest, I want to cancel a booking so that I can get a refund if my plans change.
+
+**Functional Requirement (from earlier):** The system shall allow users to view and cancel their upcoming bookings.
+
+**Acceptance Criteria (Establishing the details):**
+
+*   **AC1: Successful Cancellation with Full Refund (within free period)**
+    *   **Given** I have an upcoming booking that is more than 48 hours before check-in
+    *   **When** I navigate to "My Bookings" and click "Cancel Booking"
+    *   **Then** the system should show a confirmation pop-up with the refund amount
+    *   **And** when I confirm, the booking status should change to "Cancelled"
+    *   **And** a full refund should be initiated to my original payment method
+    *   **And** I should receive a confirmation email.
+
+*   **AC2: Cancellation with Partial Refund (outside free period)**
+    *   **Given** I have an upcoming booking that is less than 48 hours before check-in
+    *   **When** I click "Cancel Booking"
+    *   **Then** the system should show a confirmation pop-up stating that only 50% will be refunded
+    *   **And** when I confirm, the booking status should change to "Cancelled"
+    *   **And** a 50% refund should be initiated.
+
+*   **AC3: Unable to Cancel (Post-check-in)**
+    *   **Given** I have a booking where the check-in date has already passed
+    *   **When** I view the booking in "My Bookings"
+    *   **Then** the "Cancel Booking" button should not be visible.
+
