@@ -28,7 +28,7 @@ Requirements should be viewed from different perspectives, such as data, functio
 ###### Eliminate Ambiguity: 
 Because requirements are often described in natural language, there is a high potential for ambiguity. The use of formal reviews and clear, concise language is essential to prevent misunderstandings.
 
-#######  Prioritize Requirements: 
+# Prioritize Requirements: 
 
 All requirements are not created equal. They should be ranked based on their importance to the business and users, which is especially crucial for incremental development models.
 
